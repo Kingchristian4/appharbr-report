@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppHarbr Daily Intelligence Report - February 02, 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 1px solid #334155;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .date {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .stat {
+            background: #1e293b;
+            padding: 15px 25px;
+            border-radius: 10px;
+            border: 1px solid #334155;
+        }
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .stat-value.high { color: #22c55e; }
+        .stat-value.medium { color: #f59e0b; }
+        .stat-value.low { color: #94a3b8; }
+        .stat-value.total { color: #60a5fa; }
+        .stat-label {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #1e293b;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #334155;
+        }
+        th {
+            background: #334155;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #334155;
+            vertical-align: top;
+        }
+        .rank {
+            width: 50px;
+            text-align: center;
+            font-weight: bold;
+            color: #60a5fa;
+        }
+        .score {
+            width: 120px;
+        }
+        .score-bar {
+            height: 8px;
+            background: #334155;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 5px;
+        }
+        .score-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+        .score-value {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .title {
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .title:hover {
+            color: #93c5fd;
+            text-decoration: underline;
+        }
+        .summary {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+        .keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+        .keyword {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        .meta span {
+            background: #0f172a;
+            padding: 3px 10px;
+            border-radius: 4px;
+        }
+        .article-row:hover {
+            background: #253348;
+        }
+        .article-row.high .rank { color: #22c55e; }
+        .article-row.medium .rank { color: #f59e0b; }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            .stats { gap: 15px; }
+            .stat { padding: 10px 15px; }
+            .score { width: 80px; }
+            td { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔔 AppHarbr Daily Intelligence Report</h1>
+            <p class="date">February 02, 2026</p>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-value total">14</div>
+                    <div class="stat-label">Total Articles</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value high">0</div>
+                    <div class="stat-label">High Relevance</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value medium">0</div>
+                    <div class="stat-label">Medium Relevance</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value low">14</div>
+                    <div class="stat-label">Low Relevance</div>
+                </div>
+            </div>
+        </header>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Relevance</th>
+                    <th>Article</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            <tr class="article-row low">
+                <td class="rank">1</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 12.0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">12%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.admonsters.com/eletters/facebook-problems-bigger-than-just-ad-fraud/" target="_blank" class="title">Facebook Problems: Bigger Than Just Ad Fraud - AdMonsters</a>
+                    <p class="summary">Powered by: July 28, 2020 Fake Ads Aren't Facebook's Only Woe BAD ADS Act Bullies Section 230 What Pubs and Brands Need to Know About CCPA Podcasts Hit Their Stride Facebook Problems: Real Brands, Fak...</p>
+                    <div class="keywords"><span class="keyword">ad fraud</span><span class="keyword">scam ads</span><span class="keyword">fake ads</span><span class="keyword">fraudulent advertising</span><span class="keyword">political advertising</span></div>
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        
+                        <span class="date">Jul 29, 2020</span>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">2</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 7.000000000000001%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">7%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.adexchanger.com/mobile/is-ubers-new-ad-fraud-lawsuit-futile-or-game-changing/" target="_blank" class="title">Is Uber’s New Ad Fraud Lawsuit Futile Or Game Changing? | AdExchanger</a>
+                    <p class="summary">Uber is suing five ad networks for squandering tens of millions of dollars on low-quality or fraudulent ads – and it’s naming names. The suit, filed in early June in a San Francisco court, calls out H...</p>
+                    <div class="keywords"><span class="keyword">ad fraud</span><span class="keyword">fraudulent advertising</span></div>
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        <span class="author">by Allison Schiff</span>
+                        <span class="date">Jun 20, 2019</span>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">3</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 6.0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">6%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.businessofapps.com/ads/ad-fraud/research/ad-fraud-statistics/" target="_blank" class="title">Ad Fraud Statistics (2025) - Business of Apps</a>
+                    <p class="summary">Like any sphere of economy in which large sums of money are moved, the world of online advertising is an attractive one to fraudsters. Indeed, the impersonal nature of the transactions, a complex and ...</p>
+                    <div class="keywords"><span class="keyword">ad fraud</span></div>
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">4</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 6.0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">6%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.globalgamesforum.com/features/the-rise-of-deceptive-mobile-games-ads" target="_blank" class="title">The Rise of Deceptive Mobile Games Ads | Gamesforum</a>
+                    <p class="summary">In recent years, mobile games have exploded in popularity, capturing the attention of millions worldwide. However, as competition for downloads intensifies, some mobile game developers have resorted t...</p>
+                    <div class="keywords"><span class="keyword">fake ads</span><span class="keyword">deceptive ads</span><span class="keyword">misleading ads</span></div>
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">5</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 6.0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">6%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.adexchanger.com/online-advertising/a-behind-the-scenes-look-at-how-researchers-investigate-government-backed-malvertising/" target="_blank" class="title">A Behind-The-Scenes Look At How Researchers Investigate Government-Backed Malvertising | AdExchanger</a>
+                    <p class="summary">Researchers are often forced to rely on circumstantial evidence to demonstrate that a nation state is behind a malvertising campaign.</p>
+                    <div class="keywords"><span class="keyword">malvertising</span><span class="keyword">ad scams</span></div>
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        <span class="author">by Anthony Vargas</span>
+                        <span class="date">Aug 22, 2023</span>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">6</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 6.0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">6%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.admonsters.com/safeguarding-the-digital-ad-ecosystem-strategies-for-ad-fraud-prevention-in-2024/" target="_blank" class="title">Safeguarding the Digital Ad Ecosystem: Strategies for Ad Fraud Prevention in 2024 - AdMonsters</a>
+                    <p class="summary">Ann Tarasewicz, CEO, Axis, takes a look at strategies that ad tech platforms are implementing to enhance ad fraud security in 2024.</p>
+                    <div class="keywords"><span class="keyword">ad fraud</span></div>
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        <span class="author">by Ann Tarasewicz</span>
+                        <span class="date">May 09, 2024</span>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">7</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 5.0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">5%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.businessofapps.com/ads/ad-fraud/" target="_blank" class="title">Top Ad Fraud Detection Companies (2025) - Business of Apps</a>
+                    <p class="summary">Find out how you can prevent ad fraud by implementing bespoke techniques with the help of top ad fraud detection companies in digital marketing.</p>
+                    <div class="keywords"><span class="keyword">ad fraud</span></div>
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">8</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 4.0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">4%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.admonsters.com/inside-badbox-2-0-how-a-global-malware-operation-is-exploiting-ads-and-devices/" target="_blank" class="title">Inside BADBOX 2.0: How a Global Malware Operation is Exploiting Ads and Devices - AdMonsters</a>
+                    <p class="summary">BADBOX 2.0 is infecting over a million devices worldwide—targeting everything from off-brand smart TVs to Android tablets.</p>
+                    <div class="keywords"><span class="keyword">ad fraud</span><span class="keyword">ad scams</span></div>
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        <span class="author">by Susie Stulz</span>
+                        <span class="date">Mar 12, 2025</span>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">9</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 4.0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">4%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.admonsters.com/category/malvertising/" target="_blank" class="title">Malvertising Archives - AdMonsters</a>
+                    <p class="summary">Read the latest Malvertising posts on Admonsters.</p>
+                    <div class="keywords"><span class="keyword">malvertising</span></div>
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        <span class="author">by Susie Stulz</span>
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">10</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 3.0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">3%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.adexchanger.com/online-advertising/people-managing-google-ad-campaigns-are-getting-their-accounts-seized-by-scammers/" target="_blank" class="title">People Managing Google Ad Campaigns Are Getting Their Accounts Seized By Scammers | AdExchanger</a>
+                    <p class="summary">Multiple different criminal rings around the world are orchestrating surgical phishing scams that target ad industry media buyers. Specifically, fraudsters are duping ad buyers who log into Google Ads...</p>
+                    <div class="keywords"><span class="keyword">ad fraud</span><span class="keyword">phishing ads</span></div>
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        <span class="author">by James Hercher</span>
+                        <span class="date">Jan 16, 2025</span>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">11</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 3.0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">3%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.admonsters.com/digital-advertising-malware-in-2024-lessons-for-2025-and-beyond/" target="_blank" class="title">Digital Advertising Malware in 2024: Lessons for 2025 and Beyond - AdMonsters</a>
+                    <p class="summary">The 2024 Ad Quality Report found that over 70% of users now perceive at least half of online ads as untrustworthy.</p>
+                    <div class="keywords"><span class="keyword">malvertising</span><span class="keyword">social engineering</span></div>
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        <span class="author">by Yuval Shiboli</span>
+                        <span class="date">Feb 03, 2025</span>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">12</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 3.0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">3%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.businessofapps.com/ads/ad-fraud/research/online-advertising-fraud-trends-2020/" target="_blank" class="title">Online Advertising Fraud Trends (2025) - Business of Apps</a>
+                    <p class="summary">Whenever money is involved, there is always an opportunity for fraud. From a technical perspective, online advertising fraud has been a relatively easy (and yes – lucrative) business for fraudsters an...</p>
+                    <div class="keywords"><span class="keyword">ad fraud</span></div>
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">13</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 2.0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">2%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.adexchanger.com/technology/how-human-uncovered-a-scam-serving-2-5-billion-ads-per-day-to-piracy-sites/" target="_blank" class="title">How HUMAN Uncovered A Scam Serving 2.5 Billion Ads Per Day To Piracy Sites | AdExchanger</a>
+                    <p class="summary">Publishers sold programmatic ads alongside stolen content, using domain cloaking to obscure the “cashout sites” where the ads actually ran.</p>
+                    <div class="keywords"><span class="keyword">ad fraud</span></div>
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        <span class="author">by Anthony Vargas</span>
+                        <span class="date">Aug 29, 2024</span>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">14</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 2.0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">2%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.globalgamesforum.com/media/inside-the-150-billion-scam-wrecking-mobile-ads" target="_blank" class="title">Inside the $150 Billion Scam Wrecking Mobile Ads | Gamesforum</a>
+                    <p class="summary">Discover how mobile ad fraud is draining billions from gaming companies, corrupting user data, and driving poor marketing decisions. Learn the difference between compliance-based and tech-based fraud,...</p>
+                    <div class="keywords"><span class="keyword">ad fraud</span></div>
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            </tbody>
+        </table>
+
+        <footer>
+            Generated by AppHarbr Collector at 2026-02-02 11:39:34
+        </footer>
+    </div>
+</body>
+</html>
