@@ -65,6 +65,24 @@
             color: #94a3b8;
             margin-top: 5px;
         }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #60a5fa;
+        }
+        .stat-label {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
         footer {
             text-align: center;
             margin-top: 60px;
@@ -79,32 +97,25 @@
             <p class="subtitle">Ad Fraud & Scam Advertising Reports</p>
         </header>
 
-        <div class="reports" id="reports">
-            <!-- Reports will be listed here -->
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">1</div>
+                <div class="stat-label">Reports</div>
+            </div>
+        </div>
+
+        <div class="reports">
+            
+            <a href="report_2026-02-01.html" class="report-link">
+                <div class="report-date">📄 February 01, 2026</div>
+                <div class="report-desc">Daily Intelligence Report</div>
+            </a>
+
         </div>
 
         <footer>
-            <p>Updated every 3 days • Powered by AppHarbr Collector</p>
+            <p>Updated every 3 days • Last update: February 02, 2026 at 11:36</p>
         </footer>
     </div>
-
-    <script>
-        // Auto-detect report files (fallback to manual list)
-        const reports = [
-            { file: 'report_2026-02-01.html', date: 'February 1, 2026' }
-        ];
-
-        const container = document.getElementById('reports');
-        reports.forEach(report => {
-            const link = document.createElement('a');
-            link.href = report.file;
-            link.className = 'report-link';
-            link.innerHTML = `
-                <div class="report-date">📄 ${report.date}</div>
-                <div class="report-desc">Daily Intelligence Report</div>
-            `;
-            container.appendChild(link);
-        });
-    </script>
 </body>
 </html>
