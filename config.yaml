@@ -1,0 +1,111 @@
+# AppHarbr Collector Configuration
+# =================================
+# Focused on ad fraud, scam ads, and political advertising
+
+# Target websites only
+target_sites:
+  - globalgamesforum.com
+  - pocketgamer.com
+  - mobilegroove.com
+  - businessofapps.com
+  - gamigion.com
+  - adexchanger.com
+  - digiday.com
+  - admonsters.com
+
+# Search queries to execute (site-restricted)
+search_queries:
+  # Ad fraud and scams
+  - keywords:
+      - "fake ads OR malvertising OR scam ads OR ad fraud"
+    max_results: 30
+    sources:
+      - google
+      - duckduckgo
+
+  - keywords:
+      - "financial scam ads OR fraudulent advertising OR deceptive ads"
+    max_results: 30
+    sources:
+      - google
+      - duckduckgo
+
+  - keywords:
+      - "phishing ads OR social engineering OR misleading ads"
+    max_results: 20
+    sources:
+      - google
+
+  - keywords:
+      - "celebrity scam ads OR deepfake ads OR fake celebrity endorsements"
+    max_results: 20
+    sources:
+      - google
+      - duckduckgo
+
+  - keywords:
+      - "crypto scam ads OR gambling ads OR betting ads OR investment scam ads"
+    max_results: 20
+    sources:
+      - google
+
+  - keywords:
+      - "AI-generated scam ads OR synthetic media ads OR manipulated media ads"
+    max_results: 20
+    sources:
+      - google
+      - duckduckgo
+
+  - keywords:
+      - "romance scam ads OR lottery scam ads OR tech support scam ads OR impersonation ads"
+    max_results: 20
+    sources:
+      - google
+
+  # Political advertising
+  - keywords:
+      - "political advertising OR political ad regulations OR political ad compliance"
+    max_results: 30
+    sources:
+      - google
+      - duckduckgo
+
+  - keywords:
+      - "political ad transparency OR political ad disclosure OR political ad labeling"
+    max_results: 20
+    sources:
+      - google
+
+  - keywords:
+      - "election advertising rules OR campaign finance ads OR issue advocacy ads"
+    max_results: 20
+    sources:
+      - google
+      - duckduckgo
+
+  - keywords:
+      - "EU political ad regulations OR US political ad laws OR UK political ad rules"
+    max_results: 20
+    sources:
+      - google
+
+  - keywords:
+      - "sponsored political content OR political ad verification"
+    max_results: 20
+    sources:
+      - google
+      - duckduckgo
+
+# Slack notifications
+# Set SLACK_WEBHOOK_URL environment variable, or create config.local.yaml with webhook_url
+slack:
+  webhook_url: null  # Set via environment variable SLACK_WEBHOOK_URL
+
+# Processing settings
+max_articles_per_run: 100
+enable_deduplication: true
+backup_to_json: true
+
+# Output paths
+output_dir: "outputs"
+log_dir: "logs"

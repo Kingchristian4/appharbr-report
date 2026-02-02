@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppHarbr Intelligence Reports</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+        .reports {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .report-link {
+            display: block;
+            background: #1e293b;
+            padding: 20px 25px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #e2e8f0;
+            border: 1px solid #334155;
+            transition: all 0.2s;
+        }
+        .report-link:hover {
+            background: #253348;
+            border-color: #60a5fa;
+            transform: translateX(5px);
+        }
+        .report-date {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #60a5fa;
+        }
+        .report-desc {
+            color: #94a3b8;
+            margin-top: 5px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔔 AppHarbr Intelligence</h1>
+            <p class="subtitle">Ad Fraud & Scam Advertising Reports</p>
+        </header>
+
+        <div class="reports" id="reports">
+            <!-- Reports will be listed here -->
+        </div>
+
+        <footer>
+            <p>Updated every 3 days • Powered by AppHarbr Collector</p>
+        </footer>
+    </div>
+
+    <script>
+        // Auto-detect report files (fallback to manual list)
+        const reports = [
+            { file: 'report_2026-02-01.html', date: 'February 1, 2026' }
+        ];
+
+        const container = document.getElementById('reports');
+        reports.forEach(report => {
+            const link = document.createElement('a');
+            link.href = report.file;
+            link.className = 'report-link';
+            link.innerHTML = `
+                <div class="report-date">📄 ${report.date}</div>
+                <div class="report-desc">Daily Intelligence Report</div>
+            `;
+            container.appendChild(link);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+venv/
+.env
+
+# Local config with secrets
+config.local.yaml
+
+# Outputs (we copy reports to docs/ for GitHub Pages)
+outputs/articles.json
+outputs/seen_urls.json
+outputs/runs.json
+
+# Logs
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
