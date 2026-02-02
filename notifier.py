@@ -117,17 +117,20 @@ class SlackNotifier:
                 }
             })
 
-        # Add report info
+        # Add report link
         if report_path:
-            blocks.append({
-                "type": "context",
-                "elements": [
-                    {
+            # Extract date from report path for web URL
+            import re
+            date_match = re.search(r'report_(\d{4}-\d{2}-\d{2})\.html', report_path)
+            if date_match:
+                report_url = f"https://kingchristian4.github.io/appharbr-report/report_{date_match.group(1)}.html"
+                blocks.append({
+                    "type": "section",
+                    "text": {
                         "type": "mrkdwn",
-                        "text": f"📄 Full HTML report saved to: `{report_path}`"
+                        "text": f"📄 <{report_url}|View Full Report>"
                     }
-                ]
-            })
+                })
 
         # Add errors if any
         if payload.errors:
