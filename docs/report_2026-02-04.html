@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppHarbr Daily Intelligence Report - February 04, 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 1px solid #334155;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .date {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .stat {
+            background: #1e293b;
+            padding: 15px 25px;
+            border-radius: 10px;
+            border: 1px solid #334155;
+        }
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .stat-value.high { color: #22c55e; }
+        .stat-value.medium { color: #f59e0b; }
+        .stat-value.low { color: #94a3b8; }
+        .stat-value.total { color: #60a5fa; }
+        .stat-label {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #1e293b;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #334155;
+        }
+        th {
+            background: #334155;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #334155;
+            vertical-align: top;
+        }
+        .rank {
+            width: 50px;
+            text-align: center;
+            font-weight: bold;
+            color: #60a5fa;
+        }
+        .score {
+            width: 120px;
+        }
+        .score-bar {
+            height: 8px;
+            background: #334155;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 5px;
+        }
+        .score-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+        .score-value {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .title {
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .title:hover {
+            color: #93c5fd;
+            text-decoration: underline;
+        }
+        .summary {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+        .keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+        .keyword {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        .meta span {
+            background: #0f172a;
+            padding: 3px 10px;
+            border-radius: 4px;
+        }
+        .article-row:hover {
+            background: #253348;
+        }
+        .article-row.high .rank { color: #22c55e; }
+        .article-row.medium .rank { color: #f59e0b; }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            .stats { gap: 15px; }
+            .stat { padding: 10px 15px; }
+            .score { width: 80px; }
+            td { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔔 AppHarbr Daily Intelligence Report</h1>
+            <p class="date">February 04, 2026</p>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-value total">28</div>
+                    <div class="stat-label">Total Articles</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value high">0</div>
+                    <div class="stat-label">High Relevance</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value medium">0</div>
+                    <div class="stat-label">Medium Relevance</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value low">28</div>
+                    <div class="stat-label">Low Relevance</div>
+                </div>
+            </div>
+        </header>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Relevance</th>
+                    <th>Article</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            <tr class="article-row low">
+                <td class="rank">1</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.businessofapps.com/marketplace/social-media-marketing/" target="_blank" class="title">Top Social Media Marketing Companies (2025)</a>
+                    <p class="summary">Discover more about social media marketing companies, social media advertising and how both can support business app growth.</p>
+                    
+                    <div class="meta">
+                        <span class="source">Google News</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">2</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.businessofapps.com/affiliate/cpa/" target="_blank" class="title">CPA Affiliate Networks (2025)</a>
+                    <p class="summary">Are you looking for the best CPA affiliate networks? Find out how they work, why people use them, and see how to choose the best ones for you.</p>
+                    
+                    <div class="meta">
+                        <span class="source">Google News</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">3</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.businessofapps.com/marketplace/influencer-marketing/" target="_blank" class="title">Top Influencer Marketing Companies (2025)</a>
+                    <p class="summary">Influencer marketing companies can help to attract more users. Find out about the top influencer marketing companies to maximize ROI on mobile apps.</p>
+                    
+                    <div class="meta">
+                        <span class="source">Google News</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">4</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.businessofapps.com/marketplace/app-store-optimization/aso-tools/" target="_blank" class="title">Top App Store Optimization (ASO) Tools (2026)</a>
+                    <p class="summary">Are you looking for the best app store optimization tools? Learn what they are, what they do, and why you should use them to boost your app.</p>
+                    
+                    <div class="meta">
+                        <span class="source">Google News</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">5</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.businessofapps.com/insights/performance-based-user-acquisition-for-apps/" target="_blank" class="title">Performance-based user acquisition for apps - Business of Apps</a>
+                    <p class="summary">Lee Aho of Perform[cb] explains down-funnel signals, keyword conquesting, rewarded placements, and pilot frameworks.</p>
+                    
+                    <div class="meta">
+                        <span class="source">Google News</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">6</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.adexchanger.com/tv/resellers-crackdowns-are-a-good-thing-right-well-maybe-not-for-indie-ctv-publishers/" target="_blank" class="title">Resellers Crackdowns Are A Good Thing, Right? Well, Maybe Not For Indie CTV Publishers | AdExchanger</a>
+                    <p class="summary">For smaller, independent CTV publishers, reseller crackdowns look less like a clean-up and more like yet another revenue squeeze.</p>
+                    
+                    <div class="meta">
+                        <span class="source">Google News</span>
+                        <span class="author">by Victoria McNally</span>
+                        <span class="date">Feb 03, 2026</span>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">7</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.businessofapps.com/app-developers/" target="_blank" class="title">Top App Development Companies (2022)</a>
+                    <p class="summary">Find the world’s best mobile app developers with 100s of listings of the best companies and agencies</p>
+                    
+                    <div class="meta">
+                        <span class="source">Google News</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">8</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.businessofapps.com/app-developers/ios/" target="_blank" class="title">Top iPhone (iOS) App Developers (2025)</a>
+                    <p class="summary">Looking for the best iPhone app development companies? Find out how to build the ultimate app and what to look for when choosing your iOS app developer.</p>
+                    
+                    <div class="meta">
+                        <span class="source">Google News</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">9</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.adexchanger.com/daily-news-roundup/monday-02022026/" target="_blank" class="title">The Three-Letter Acronym From Hell; Streaming The Hits | AdExchanger</a>
+                    <p class="summary">ICE is going ad tech; Streaming television is more original than ever; and YouTube wants to keep all its data to itself.</p>
+                    
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        <span class="author">by AdExchanger</span>
+                        <span class="date">Feb 02, 2026</span>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">10</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.businessofapps.com/ads/mobile-ad-network/" target="_blank" class="title">Top Mobile Ad Networks (2025) - Business of Apps</a>
+                    <p class="summary">Mobile ad networks are a handy tool for advertisers and publishers. Partner with top ad networks to improve ad quality and boost your mobile app’s ROI.</p>
+                    
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">11</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.businessofapps.com/ads/self-service/" target="_blank" class="title">Self Service Advertising Networks - Business of Apps</a>
+                    <p class="summary">List of self service ad platforms</p>
+                    
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">12</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.adexchanger.com/tag/prebid-adapter/" target="_blank" class="title">Prebid adapter Archives | AdExchanger</a>
+                    <p class="summary">Dive into AdExchanger's Prebid adapter coverage for the latest updates, expert opinions, and analysis shaping the future of advertising and marketing technology.</p>
+                    
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        <span class="author">by Sarah Sluis</span>
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">13</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.businessofapps.com/ads/banners/" target="_blank" class="title">Mobile Banner Ads (2025) - Business of Apps</a>
+                    <p class="summary">Discover how mobile banner ads can help advertisers and publishers design and execute successful mobile advertising campaigns.</p>
+                    
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">14</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.globalgamesforum.com/podcasts/the-roundup-candy-crush-expands-to-yahoo-mobile-gaming-faces-profit-reset-liftoff-mobile-files-for-ipo" target="_blank" class="title">The Roundup: Candy Crush Expands to Yahoo, Mobile Gaming Faces Profit Reset, Liftoff Mobile Files for IPO</a>
+                    <p class="summary">In this week’s roundup: Candy Crush tests new distribution beyond app stores, mobile game profits face mounting pressure, and adtech firm Liftoff Mobile moves toward a public listing.</p>
+                    
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">15</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.gamigion.com/meta-ends-2025-with-ads-on-fire-ai-playbook-for-mobile/" target="_blank" class="title">Meta Ends 2025 With Ads on Fire & AI Playbook for Mobile</a>
+                    <p class="summary">Meta's Total Revenue reached $201B in 2025. $60B just in Q4. “Strong business performance in 2025. Now we push toward personal Superintelligence in 2026.” Metrics That Matter? Daily audience: 3.58B pe...</p>
+                    
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        <span class="author">by Gamigion</span>
+                        <span class="date">Feb 01, 2026</span>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">16</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.businessofapps.com/ads/rich-media/" target="_blank" class="title">Rich Media Ads (2025) - Business of Apps</a>
+                    <p class="summary">Learn how rich media boosts engagement with interactive features. Discover top rich media ad networks & best practices to optimize your ad campaigns.</p>
+                    
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">17</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.businessofapps.com/affiliate/" target="_blank" class="title">Top Affiliate Marketing Companies (2021)</a>
+                    <p class="summary">Traffic Light Direct Nutra and BS/SP offers WorldWide Direct Nutra and BS/SP offers WorldWide View more</p>
+                    
+                    <div class="meta">
+                        <span class="source">Google News</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">18</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://digiday.com/" target="_blank" class="title">Digiday — The home of modern media and marketing</a>
+                    <p class="summary">Digiday is the leading voice of the media and marketing industry and how they are being disrupted by technology.</p>
+                    
+                    <div class="meta">
+                        <span class="source">Google News</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">19</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.globalgamesforum.com/reports/the-roundup-candy-crush-expands-to-yahoo-mobile-gaming-faces-profit-reset-liftoff-mobile-files-for-ipo" target="_blank" class="title">The Roundup: Candy Crush Expands to Yahoo, Mobile Gaming Faces Profit Reset, Liftoff Mobile Files for IPO</a>
+                    <p class="summary">In this week’s roundup: Candy Crush tests new distribution beyond app stores, mobile game profits face mounting pressure, and adtech firm Liftoff Mobile moves toward a public listing.</p>
+                    
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">20</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.businessofapps.com/marketplace/app-marketing/" target="_blank" class="title">Top App Marketing Companies (2025)</a>
+                    <p class="summary">Discover the top mobile app marketing agencies and companies to help promote your app, targeting the right users and driving profitable action instantly.</p>
+                    
+                    <div class="meta">
+                        <span class="source">Google News</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">21</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.businessofapps.com/app-developers/ecommerce/" target="_blank" class="title">Ecommerce App Developers (2026)</a>
+                    <p class="summary">Are you looking for the best eCommerce app development company? Find out how much it costs and the benefits of using app development services.</p>
+                    
+                    <div class="meta">
+                        <span class="source">Google News</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">22</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.businessofapps.com/app-developers/restaurant/" target="_blank" class="title">Restaurant App Developers (2025)</a>
+                    <p class="summary">Are you looking for the best restaurant app developers? Learn the app development process, how much it costs and the benefits of using the services.</p>
+                    
+                    <div class="meta">
+                        <span class="source">Google News</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">23</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.businessofapps.com/app-developers/india/" target="_blank" class="title">India App Developers (2025)</a>
+                    <p class="summary">Find out how you can benefit from working with the industry's top India app developers to achieve long-term success for your mobile app.</p>
+                    
+                    <div class="meta">
+                        <span class="source">Google News</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">24</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.businessofapps.com/app-developers/social/" target="_blank" class="title">Social App Developers (2025)</a>
+                    <p class="summary">Are you looking for the best social app developers? Learn the app development process, how much it costs and the benefits of using the services.</p>
+                    
+                    <div class="meta">
+                        <span class="source">Google News</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">25</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.adexchanger.com/data-privacy-roundup/what-the-ftcs-focus-on-age-verification-means-for-privacy/" target="_blank" class="title">What The FTC’s Focus On Age Verification Means For Privacy | AdExchanger</a>
+                    <p class="summary">Efforts to police children's data online are running up against the limits of decades-old privacy laws, such as COPPA.</p>
+                    
+                    <div class="meta">
+                        <span class="source">Google News</span>
+                        <span class="author">by Allison Schiff</span>
+                        <span class="date">Feb 02, 2026</span>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">26</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.adexchanger.com/author/victoria-mcnally/" target="_blank" class="title">Victoria McNally, Author at AdExchanger</a>
+                    <p class="summary">AUTHOR ARCHIVE FOR: Victoria McNally Associate Editor Victoria has been with AdExchanger since 2024. She covers the TV beat, from connected TV (CTV) to online video. She previously covered the agencie...</p>
+                    
+                    <div class="meta">
+                        <span class="source">Google News</span>
+                        <span class="author">by Victoria McNally</span>
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">27</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://digiday.com/announcement/awards/financial-times-twitch-and-politico-are-among-the-winners-of-this-years-digiday-media-awards-europe/" target="_blank" class="title">Financial Times, Twitch and Politico are among the winners of this year's Digiday Media Awards Europe</a>
+                    <p class="summary">The winners of this year's Digiday Media Awards Europe reflect a shift toward experiences that are participatory, connected and built across ecosystems rather than single channels. Digital campaigns i...</p>
+                    
+                    <div class="meta">
+                        <span class="source">Google News</span>
+                        <span class="author">by Digiday Awards</span>
+                        <span class="date">Feb 03, 2026</span>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">28</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">0%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.adexchanger.com/author/anthony-vargas/" target="_blank" class="title">Anthony Vargas, Author at AdExchanger</a>
+                    <p class="summary">AUTHOR ARCHIVE FOR: Anthony Vargas Senior Editor Anthony Vargas ( anthony@adexchanger.com ) covers publisher news and sell-side technology, with a particular focus on the rise of alternative datasets ...</p>
+                    
+                    <div class="meta">
+                        <span class="source">Google News</span>
+                        <span class="author">by Anthony Vargas</span>
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            </tbody>
+        </table>
+
+        <footer>
+            Generated by AppHarbr Collector at 2026-02-04 11:02:31
+        </footer>
+    </div>
+</body>
+</html>
