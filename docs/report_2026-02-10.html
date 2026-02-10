@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppHarbr Daily Intelligence Report - February 10, 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 1px solid #334155;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .date {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .stat {
+            background: #1e293b;
+            padding: 15px 25px;
+            border-radius: 10px;
+            border: 1px solid #334155;
+        }
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .stat-value.high { color: #22c55e; }
+        .stat-value.medium { color: #f59e0b; }
+        .stat-value.low { color: #94a3b8; }
+        .stat-value.total { color: #60a5fa; }
+        .stat-label {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #1e293b;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #334155;
+        }
+        th {
+            background: #334155;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #334155;
+            vertical-align: top;
+        }
+        .rank {
+            width: 50px;
+            text-align: center;
+            font-weight: bold;
+            color: #60a5fa;
+        }
+        .score {
+            width: 120px;
+        }
+        .score-bar {
+            height: 8px;
+            background: #334155;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 5px;
+        }
+        .score-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+        .score-value {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .title {
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .title:hover {
+            color: #93c5fd;
+            text-decoration: underline;
+        }
+        .summary {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+        .keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+        .keyword {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        .meta span {
+            background: #0f172a;
+            padding: 3px 10px;
+            border-radius: 4px;
+        }
+        .article-row:hover {
+            background: #253348;
+        }
+        .article-row.high .rank { color: #22c55e; }
+        .article-row.medium .rank { color: #f59e0b; }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            .stats { gap: 15px; }
+            .stat { padding: 10px 15px; }
+            .score { width: 80px; }
+            td { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔔 AppHarbr Daily Intelligence Report</h1>
+            <p class="date">February 10, 2026</p>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-value total">4</div>
+                    <div class="stat-label">Total Articles</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value high">0</div>
+                    <div class="stat-label">High Relevance</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value medium">0</div>
+                    <div class="stat-label">Medium Relevance</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value low">4</div>
+                    <div class="stat-label">Low Relevance</div>
+                </div>
+            </div>
+        </header>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Relevance</th>
+                    <th>Article</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            <tr class="article-row low">
+                <td class="rank">1</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 5.0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">5%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.adexchanger.com/on-tv-and-video/cleaning-up-ctv-supply-a-publishers-guide-to-reducing-ad-fraud/" target="_blank" class="title">Cleaning Up CTV Supply: A Publisher’s Guide To Reducing Ad Fraud | AdExchanger</a>
+                    <p class="summary">When it comes to managing fraud, there are four steps CTV publishers should take to remove bad actors from the supply chain.</p>
+                    <div class="keywords"><span class="keyword">ad fraud</span></div>
+                    <div class="meta">
+                        <span class="source">Google News</span>
+                        <span class="author">by AdExchanger Guest Columnist</span>
+                        <span class="date">Feb 09, 2026</span>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">2</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 5.0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">5%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.businessofapps.com/ads/ad-fraud/" target="_blank" class="title">Top Ad Fraud Detection Companies (2025) - Business of Apps</a>
+                    <p class="summary">Find out how you can prevent ad fraud by implementing bespoke techniques with the help of top ad fraud detection companies in digital marketing.</p>
+                    <div class="keywords"><span class="keyword">ad fraud</span></div>
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">3</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 4.0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">4%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.mediapost.com/publications/article/412343/users-fight-meta-bid-for-fast-appeal-over-fake-ads.html" target="_blank" class="title">Users Fight Meta Bid For Fast Appeal Over Fake Ads 01/28/2026</a>
+                    <p class="summary">Users Fight Meta Bid For Fast Appeal Over Fake Ads - 01/28/2026</p>
+                    <div class="keywords"><span class="keyword">fake ads</span></div>
+                    <div class="meta">
+                        <span class="source">Google News</span>
+                        <span class="author">by Wendy Davis</span>
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="article-row low">
+                <td class="rank">4</td>
+                <td class="score">
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 2.0%; background: #94a3b8;"></div>
+                    </div>
+                    <span class="score-value">2%</span>
+                </td>
+                <td class="content">
+                    <a href="https://www.adexchanger.com/tag/ctv-resellers/" target="_blank" class="title">CTV resellers Archives | AdExchanger</a>
+                    <p class="summary">Dive into AdExchanger's CTV resellers coverage for the latest updates, expert opinions, and analysis shaping the future of advertising and marketing technology.</p>
+                    <div class="keywords"><span class="keyword">ad fraud</span></div>
+                    <div class="meta">
+                        <span class="source">DuckDuckGo</span>
+                        <span class="author">by Greg Smith, StreamVantage</span>
+                        
+                    </div>
+                </td>
+            </tr>
+            
+            </tbody>
+        </table>
+
+        <footer>
+            Generated by AppHarbr Collector at 2026-02-10 16:01:26
+        </footer>
+    </div>
+</body>
+</html>
